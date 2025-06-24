@@ -14,6 +14,9 @@ const bookSchema = new Schema<TBook>({
     description: { type: String, trim: true },
     copies: { type: Number, min: 1, required: true },
     available: { type: Boolean, default: true }
+}, {
+    versionKey: false,
+    timestamps: true
 })
 
 export const Book = model<TBook>('book', bookSchema)
