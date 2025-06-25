@@ -8,7 +8,7 @@ interface borrowInstanceMethod extends Model<TBorrow> {
 }
 
 const borrowSchema = new Schema<TBorrow, borrowInstanceMethod>({
-    book: { type: Schema.ObjectId, required: true },
+    book: { type: Schema.ObjectId, required: true, ref : 'book' },
     quantity: { type: Number, required: true },
     dueDate: { type: Date, required: true }
 }, {
