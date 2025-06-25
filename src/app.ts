@@ -9,6 +9,11 @@ dotenv.config()
 app.use(express.json())
 app.use('/api/books', BookRoutes)
 app.use('/api/borrow', BorrowRoute)
+
+app.get('/', (req, res) => {
+    res.send('Server is Running')
+})
+
 app.use((req: Request, res: Response, next: NextFunction) => {
     res.status(404).json({
         success: false,
@@ -28,9 +33,7 @@ function errorHandler(err: Error, req: Request, res: Response, next: NextFunctio
     // res.render('error', { error: err })
 }
 
-app.get('/', (req, res) => {
-    res.send('Server is Running')
-})
+
 
 
 
