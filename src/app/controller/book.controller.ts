@@ -80,7 +80,10 @@ BookRoutes.put('/:bookId', async (req: Request, res: Response) => {
     try {
         const bookId = req.params.bookId
         const data = req.body
-        const result = await Book.findByIdAndUpdate(bookId, data, { new: true })
+        const updateData = {
+            ...data
+        }
+        const result = await Book.findByIdAndUpdate(bookId, updateData, { new: true })
 
         if (!result) {
             res.status(404).json({

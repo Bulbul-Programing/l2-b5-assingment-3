@@ -31,7 +31,8 @@ BorrowRoute.post('/', async (req: Request, res: Response) => {
             })
         }
         else {
-            const updateCopy = BorrowModel.updateBorrowCopy(borrowData.book, Number(borrowData.quantity), isExistBook)
+            const updateCopy = await BorrowModel.updateBorrowCopy(borrowData.book, Number(borrowData.quantity), isExistBook)
+            
             const result = await BorrowModel.create(borrowData)
             res.status(200).json({
                 "success": true,

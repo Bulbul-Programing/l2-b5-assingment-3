@@ -1,0 +1,1 @@
+{"root":["./src/app.ts","./src/server.ts","./src/app/controller/book.controller.ts","./src/app/controller/borrow.controller.ts","./src/app/interface/book.interface.ts","./src/app/interface/borrow .interface.ts","./src/app/models/book.model.ts","./src/app/models/borrow.model.ts"],"version":"5.8.3"}
